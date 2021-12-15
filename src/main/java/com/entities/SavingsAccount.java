@@ -11,11 +11,14 @@ public class SavingsAccount {
 	}
 
 	public void calculateMonthlyInterest() {
-		savingsBalance *= (annualInterestRate / 100) / 12;
+		double interest = savingsBalance * (annualInterestRate / 100) / 12;
+		savingsBalance += interest;
+		display(interest);
 	}
 	
-	public void display() {
-		System.out.println(" The account has $" + savingsBalance);
+	public void display(double interest) {
+		System.out.println(" This account has a monthly interest rate of " + interest);
+		System.out.println(" The new balance of this account is now $" + savingsBalance);
 	}
 	
 	public static void modifyInterestRate(double newInterestRate) {
