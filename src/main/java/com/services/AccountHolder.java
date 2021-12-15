@@ -3,24 +3,24 @@ package com.services;
 import com.entities.SavingsAccount;
 
 public class AccountHolder {
-	
+
 	public static void main(String[] args) {
 
-		// init two accounts with new balances
+		// Initialize two accounts with new balances
 		SavingsAccount john = new SavingsAccount(2000);
 		SavingsAccount doe = new SavingsAccount(3000);
-		
-		// set the interest rate to 4% and calculate the new values
-		SavingsAccount.modifyInterestRate(4);
+
+		// Set the interest rate to 4% and calculate the new values
+		SavingsAccount.setAnnualInterestRate(4);
 		john.calculateMonthlyInterest();
 		doe.calculateMonthlyInterest();
-		
-		// set the interest rate to 5% and calculate the new values
+
+		// Set the interest rate to 5% and calculate the new values
 		System.out.println();
 		SavingsAccount.modifyInterestRate(5);
 		john.calculateMonthlyInterest();
 		doe.calculateMonthlyInterest();
-		
+
 	}
 
 }
